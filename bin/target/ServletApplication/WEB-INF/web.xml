@@ -1,0 +1,25 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Protected Resources</web-resource-name>
+      <url-pattern>/dashboard</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>CEO</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/index.html</form-login-page>
+      <form-error-page>/index.html?error=true</form-error-page>
+    </form-login-config>
+  </login-config>
+  <security-role>
+    <role-name>CEO</role-name>
+  </security-role>
+</web-app>
